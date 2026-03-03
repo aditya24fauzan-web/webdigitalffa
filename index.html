@@ -3,249 +3,466 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wedding Firdha.F.A & Dendi.R</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Fadzillah Fauzan Aditya | Web Developer</title>
+<meta name="description" content="Portfolio resmi Fadzillah Fauzan Aditya - Web Developer profesional dari Bandung, Indonesia.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#faf7f2;color:#333;overflow-x:hidden}
-h1,h2,h3{font-family:'Great Vibes',cursive}
+:root{
+    --primary:#2563eb;
+    --dark:#0f172a;
+    --card:#1e293b;
+    --gray:#94a3b8;
+}
 
-/* OPENING */
-.opening{
-position:fixed;inset:0;background:#000;
-display:flex;flex-direction:column;
-justify-content:center;align-items:center;
-color:#fff;z-index:999;
-text-align:center;padding:20px
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
 }
-.opening h1{font-size:40px;margin-bottom:20px}
-.btn{
-background:#c8a96a;color:#fff;
-padding:12px 30px;border:none;
-border-radius:30px;cursor:pointer;
-transition:.3s
+
+html{
+    scroll-behavior:smooth;
 }
-.btn:hover{background:#b8914e}
+
+body{
+    background:var(--dark);
+    color:white;
+    line-height:1.7;
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    background:rgba(15,23,42,0.95);
+    backdrop-filter:blur(12px);
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo{
+    font-weight:700;
+    color:var(--primary);
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:var(--primary);
+}
+
+.hamburger{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+}
 
 /* HERO */
-.hero{
-height:100vh;
-background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200') center/cover;
-display:flex;flex-direction:column;
-justify-content:center;align-items:center;
-color:#fff;text-align:center
+header{
+    padding:180px 8% 120px;
+    position:relative;
+    overflow:hidden;
 }
-.hero h1{font-size:50px}
-.hero p{margin-top:10px;font-size:18px}
+}
 
-/* FLOATING FLOWERS */
-.flower{
-position:fixed;
-top:-50px;
-width:25px;height:25px;
-background:url('https://pngimg.com/uploads/rose_petals/rose_petals_PNG23.png') center/contain no-repeat;
-animation:fall linear infinite;
-pointer-events:none
+.hero{
+    display:flex;
+    align-items:center;
+    gap:60px;
+    max-width:1100px;
+    width:100%;
 }
-@keyframes fall{
-0%{transform:translateY(-10px) rotate(0deg)}
-100%{transform:translateY(110vh) rotate(360deg)}
+
+.hero img{
+    width:270px;
+    height:270px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid var(--primary);
+}
+
+.hero-text h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.hero-text p{
+    color:var(--gray);
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 30px;
+    background:var(--primary);
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#1d4ed8;
 }
 
 /* SECTION */
-section{padding:80px 20px;text-align:center;max-width:1000px;margin:auto}
-
-/* COUPLE PHOTO */
-.couple img{
-width:280px;max-width:90%;
-border-radius:20px;
-box-shadow:0 0 30px rgba(200,169,106,.7);
-animation:float 4s ease-in-out infinite
-}
-@keyframes float{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-15px)}
+section{
+    padding:90px 8%;
 }
 
-/* COUNTDOWN */
-.countdown{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-top:20px}
-.countdown div{
-background:#c8a96a;color:#fff;
-padding:15px;border-radius:10px;
-min-width:70px;font-weight:bold
+.section-title{
+    text-align:center;
+    font-size:30px;
+    margin-bottom:60px;
 }
 
-/* STORY */
-.story-box{
-background:#fff;
-padding:20px;margin:20px 0;
-border-radius:15px;
-box-shadow:0 10px 20px rgba(0,0,0,.05);
-opacity:0;transform:translateY(40px);
-transition:.8s
-}
-.story-box.show{opacity:1;transform:translateY(0)}
-
-/* GALLERY */
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:10px;margin-top:30px
-}
-.gallery img{
-width:100%;border-radius:15px;
-transition:.3s;cursor:pointer
-}
-.gallery img:hover{transform:scale(1.05)}
-
-/* RSVP */
-form{max-width:400px;margin:30px auto}
-input,textarea{
-width:100%;padding:10px;
-margin:10px 0;border-radius:8px;
-border:1px solid #ccc
-}
-button.submit{
-background:#c8a96a;color:#fff;
-padding:10px;border:none;
-border-radius:8px;width:100%;
-cursor:pointer
+.card{
+    background:var(--card);
+    padding:35px;
+    border-radius:15px;
+    transition:0.3s;
 }
 
-/* MAP */
-iframe{width:100%;height:300px;border-radius:15px;margin-top:20px}
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* SKILLS */
+.skill{
+    margin-bottom:25px;
+}
+
+.skill-name{
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.progress{
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:10px;
+    width:0;
+    background:var(--primary);
+    transition:2s ease;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+/* SOCIAL BUTTONS */
+.social-links{
+    margin-top:25px;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.social-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 18px;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    transition:0.3s ease;
+    color:white;
+}
+
+.instagram{
+    background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+}
+
+.whatsapp{
+    background:#25D366;
+}
+
+.social-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Floating WA */
+.floating-wa{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#25D366;
+    color:white;
+    font-size:22px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+    transition:0.3s;
+}
+
+.floating-wa:hover{
+    transform:scale(1.1);
+}
 
 /* FOOTER */
-footer{background:#111;color:#fff;padding:30px;text-align:center;margin-top:50px}
+footer{
+    text-align:center;
+    padding:40px;
+    color:var(--gray);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+
+    .hero-text h1{
+        font-size:32px;
+    }
+}
 
 @media(max-width:768px){
-.hero h1{font-size:32px}
-.opening h1{font-size:28px}
+    .nav-links{
+        position:absolute;
+        top:70px;
+        right:0;
+        background:var(--card);
+        flex-direction:column;
+        width:220px;
+        padding:20px;
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .hamburger{
+        display:block;
+    }
 }
+
+/* HERO PREMIUM */
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.hero-text{
+    max-width:600px;
+}
+
+.hero-text h1{
+    font-size:48px;
+    line-height:1.2;
+}
+
+.hero-text p{
+    font-size:18px;
+    color:var(--gray);
+    margin:20px 0 30px;
+}
+
+.badge{
+    display:inline-block;
+    background:rgba(37,99,235,0.15);
+    color:var(--primary);
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.hero img{
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid var(--primary);
+    box-shadow:0 0 60px rgba(37,99,235,0.4);
+}
+
+/* Background Glow */
+header::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle, rgba(37,99,235,0.3) 0%, transparent 70%);
+    top:-100px;
+    right:-100px;
+    z-index:-1;
+}
+
+/* Responsive Hero */
+@media(max-width:900px){
+    .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+
+    .hero-text h1{
+        font-size:34px;
+    }
+
+    .hero img{
+        width:220px;
+        height:220px;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- OPENING -->
-<div class="opening" id="opening">
-<h1>Firdha.F.A & Dendi.R</h1>
-<p>22 Desember 2024</p>
-<button class="btn" onclick="startWedding()">Buka Undangan</button>
-</div>
+<nav>
+    <div class="logo">Fadzillah</div>
+    <div class="nav-links" id="navLinks">
+        <a href="#about">Tentang</a>
+        <a href="#skills">Skills</a>
+        <a href="#project">Project</a>
+        <a href="#contact">Kontak</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+</nav>
 
-<!-- HERO -->
-<div id="mainContent" style="display:none">
+<header>
+    <div class="hero">
+        <div class="hero-text">
+            <div class="badge">Available for Freelance</div>
+            <h1>Fadzillah Fauzan Aditya</h1>
+            <p>
+                Web Developer profesional yang membangun website modern,
+                responsif, dan meningkatkan kredibilitas bisnis dengan desain clean
+                dan performa optimal.
+            </p>
+            <a href="#contact" class="btn">Hubungi Saya</a>
+        </div>
 
-<div class="hero">
-<h1>Firdha.F.A & Dendi.R</h1>
-<p>22 Desember 2023</p>
-</div>
+        <img src="profile.jpg" alt="Foto Fadzillah">
+    </div>
+</header>
 
-<section class="couple">
-<h2>Pasangan Berbahagia</h2>
-<img src="https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=800">
+<section id="about">
+    <h2 class="section-title">Tentang Saya</h2>
+    <div class="card">
+        Web Developer freelance dari Bandung yang membantu bisnis memiliki
+        website profesional, cepat, dan modern dengan desain clean dan performa optimal.
+    </div>
 </section>
 
-<section>
-<h2>Countdown Menuju Hari Bahagia</h2>
-<div class="countdown">
-<div><span id="days">0</span><br>Hari</div>
-<div><span id="hours">0</span><br>Jam</div>
-<div><span id="minutes">0</span><br>Menit</div>
-<div><span id="seconds">0</span><br>Detik</div>
-</div>
+<section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="card">
+        <div class="skill"><div class="skill-name">HTML</div><div class="progress"><div class="progress-bar" data-width="95%"></div></div></div>
+        <div class="skill"><div class="skill-name">CSS</div><div class="progress"><div class="progress-bar" data-width="90%"></div></div></div>
+        <div class="skill"><div class="skill-name">JavaScript</div><div class="progress"><div class="progress-bar" data-width="85%"></div></div></div>
+        <div class="skill"><div class="skill-name">Python</div><div class="progress"><div class="progress-bar" data-width="75%"></div></div></div>
+        <div class="skill"><div class="skill-name">Other Technologies</div><div class="progress"><div class="progress-bar" data-width="70%"></div></div></div>
+    </div>
 </section>
 
-<section>
-<h2>Love Story</h2>
-<div class="story-box">💌 2018 - Pertama kali bertemu.</div>
-<div class="story-box">💍 2023 - Lamaran penuh haru.</div>
-<div class="story-box">💖 2023 - Menuju pernikahan suci.</div>
+<section id="project">
+    <h2 class="section-title">Project</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Website Perusahaan</h3>
+            <p><strong>PT. Bara Teknik Mandiri</strong></p>
+            <p style="margin-top:10px;">Website company profile profesional dan responsif.</p>
+            <a href="https://ptbarateknikmandiri.com/">ptbarateknikmandiri.com</a>
+        </div>
+    </div>
 </section>
 
-<section>
-<h2>Galeri Kenangan</h2>
-<div class="gallery">
-<img src="img1.jpg">
-<img src="img2.jpg">
-<img src="img3.jpg">
-<img src="img4.jpg">
-</div>
+
+<section id="project">
+    <h2 class="section-title"></h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Website Undangan Pernikahan Digital</h3>
+            <p><strong></strong></p>
+            <p style="margin-top:10px;">Website Undangan Pernikahan Digital dengan fitur lengkap dan custom desain</p>
+            <a href="https://aditya24fauzan-web.github.io/webdigitalffa/">websiteundangandigital.com</a>
+        </div>
+    </div>
 </section>
 
-<section>
-<h2>Lokasi Acara</h2>
-<p>Jl. Raya Pembangunan No.542, Mekarjaya, Cihampelas, Bandung Barat</p>
-<iframe src="https://www.google.com/maps?q=Jl.+Cidemang+Mekarsari+Rt.+03/08+Desa+Mekarsari+Kec.+Cipongkor+Kab.+Bandung+Barat&output=embed"></iframe>
-</section>
 
-<section>
-<h2>RSVP</h2>
-<form onsubmit="return sendRSVP(event)">
-<input type="text" placeholder="Nama Anda" required>
-<textarea placeholder="Ucapan & Doa"></textarea>
-<button class="submit">Kirim</button>
-</form>
+<section id="contact">
+    <h2 class="section-title">Kontak</h2>
+    <div class="card">
+        <p><strong>Email:</strong> aditya24fauzan@gmail.com</p>
+        <p><strong>Lokasi:</strong> Bandung, Indonesia</p>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/ff.aditya24?igsh=Z3hsdXVzZ3ZtOGR3" target="_blank" class="social-btn instagram">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://wa.me/6283843021004" target="_blank" class="social-btn whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+    </div>
 </section>
 
 <footer>
-© 2026 Wedding Firdha.F.A & Dendi.R
+    © 2026 Fadzillah Fauzan Aditya. All Rights Reserved.
 </footer>
 
-</div>
-
-<audio id="music" loop>
-<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
-</audio>
+<a href="https://wa.me/6283843021004" class="floating-wa" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
 <script>
-function startWedding(){
-document.getElementById("opening").style.display="none";
-document.getElementById("mainContent").style.display="block";
-document.getElementById("music").play();
-createFlowers();
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("active");
 }
 
-function createFlowers(){
-for(let i=0;i<20;i++){
-let flower=document.createElement("div");
-flower.classList.add("flower");
-flower.style.left=Math.random()*100+"vw";
-flower.style.animationDuration=(5+Math.random()*5)+"s";
-document.body.appendChild(flower);
-}
-}
-
-const target=new Date("Desember 22, 2023 00:00:00").getTime();
-setInterval(()=>{
-const now=new Date().getTime();
-const diff=target-now;
-document.getElementById("days").innerHTML=Math.floor(diff/(1000*60*60*24));
-document.getElementById("hours").innerHTML=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-document.getElementById("minutes").innerHTML=Math.floor((diff%(1000*60*60))/(1000*60));
-document.getElementById("seconds").innerHTML=Math.floor((diff%(1000*60))/1000);
-},1000);
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-},{threshold:0.2});
-
-document.querySelectorAll(".story-box").forEach(el=>{
-observer.observe(el);
-});
-
-function sendRSVP(e){
-e.preventDefault();
-alert("Terima kasih atas doa dan kehadirannya ❤️");
-}
+const bars = document.querySelectorAll('.progress-bar');
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.style.width = entry.target.dataset.width;
+        }
+    });
+},{threshold:0.5});
+bars.forEach(bar=>observer.observe(bar));
 </script>
 
 </body>
